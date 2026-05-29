@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff4df" />
+  <title>Roasted Cherry Tomato Chicken Salad with Creamy Dijon Yogurt Dressing</title>
+  <meta name="description" content="A mobile-friendly food blog recipe page for roasted cherry tomato chicken salad with creamy Dijon yogurt dressing." />
+  <style>
+    :root {
+      color-scheme: light;
+      --cream: #fff4df;
+      --cream-2: #ffecd1;
+      --paper: #fffdf7;
+      --paper-soft: rgba(255, 253, 247, .82);
+      --ink: #2c231d;
+      --muted: #746358;
+      --line: rgba(44, 35, 29, .13);
+      --tomato: #df4d3f;
+      --tomato-dark: #922c27;
+      --leaf: #4f8c52;
+      --leaf-dark: #275b37;
+      --corn: #f4bc35;
+      --pickle: #7b9c42;
+      --mustard: #c58f20;
+      --garlic: #f1d4b8;
+      --chicken: #e6b386;
+      --shadow: 0 16px 40px rgba(74, 47, 25, .14);
+      --shadow-soft: 0 8px 24px rgba(74, 47, 25, .10);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --tap: 46px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(223, 77, 63, .16) 0 110px, transparent 112px),
+        radial-gradient(circle at 98% 8%, rgba(244, 188, 53, .18) 0 120px, transparent 122px),
+        linear-gradient(145deg, var(--cream) 0%, #fffaf0 45%, var(--cream-2) 100%);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .16;
+      background-image: radial-gradient(rgba(44,35,29,.13) 1px, transparent 1px);
+      background-size: 20px 20px;
+      mask-image: linear-gradient(to bottom, #000, transparent 82%);
+    }
+
+    a { color: inherit; }
+
+    button, a.button {
+      min-height: var(--tap);
+      min-width: var(--tap);
+      border: 1px solid rgba(44, 35, 29, .14);
+      border-radius: 999px;
+      padding: 12px 16px;
+      background: rgba(255, 253, 247, .88);
+      color: var(--ink);
+      font: inherit;
+      font-weight: 850;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    button:active, a.button:active { transform: translateY(1px); }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: 8px;
+      transform: translateY(-160%);
+      background: var(--ink);
+      color: #fff7e8;
+      padding: 10px 14px;
+      border-radius: 999px;
+      z-index: 100;
+      font-weight: 800;
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .page {
+      width: min(100% - 18px, var(--max));
+      margin: 0 auto;
+      padding: 10px 0 calc(88px + env(safe-area-inset-bottom));
+      position: relative;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 0 14px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      font-size: .76rem;
+      font-weight: 950;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--leaf-dark);
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 32% 30%, rgba(255,255,255,.78) 0 5px, transparent 6px),
+        conic-gradient(from 50deg, var(--tomato), var(--corn), var(--leaf), var(--tomato));
+      box-shadow: inset 0 0 0 3px rgba(255,255,255,.76), var(--shadow-soft);
+    }
+
+    .desktop-actions { display: none; }
+
+    .hero {
+      position: relative;
+      overflow: clip;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(150deg, rgba(255,255,255,.82), rgba(255,248,232,.92)),
+        radial-gradient(circle at 82% 20%, rgba(223,77,63,.14), transparent 32%);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-art-wrap {
+      position: relative;
+      min-height: 264px;
+      display: grid;
+      place-items: center;
+      padding: 12px 6px 0;
+      isolation: isolate;
+    }
+
+    .hero-art-wrap::before {
+      content: "";
+      position: absolute;
+      width: min(84vw, 390px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, rgba(255,253,247,.85) 0 42%, transparent 43%),
+        conic-gradient(from -18deg, rgba(223,77,63,.20), rgba(244,188,53,.22), rgba(79,140,82,.20), rgba(223,77,63,.20));
+      z-index: -1;
+    }
+
+    .salad-hero {
+      width: min(94vw, 440px);
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 18px 22px rgba(74, 47, 25, .18));
+      transform: rotate(-1.5deg);
+    }
+
+    .chip-row {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 0 18px 14px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .chip-row::-webkit-scrollbar { display: none; }
+
+    .chip {
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 11px;
+      background: rgba(255,253,247,.86);
+      font-size: .78rem;
+      font-weight: 900;
+      color: var(--leaf-dark);
+      box-shadow: 0 6px 16px rgba(74, 47, 25, .08);
+    }
+
+    .chip:nth-child(2) { color: var(--tomato-dark); }
+    .chip:nth-child(3) { color: #855f13; }
+
+    .hero-copy {
+      padding: 0 20px 22px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      width: fit-content;
+      margin-bottom: 12px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(79, 140, 82, .12);
+      color: var(--leaf-dark);
+      font-size: .72rem;
+      font-weight: 950;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.06;
+      letter-spacing: -.04em;
+    }
+
+    h1, h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 950;
+    }
+
+    h1 {
+      max-width: 11ch;
+      font-size: clamp(2.55rem, 13vw, 4.75rem);
+    }
+
+    h2 {
+      font-size: clamp(2rem, 9vw, 3.25rem);
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      letter-spacing: -.02em;
+    }
+
+    .lead {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .68);
+      padding: 12px;
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: .7rem;
+      font-weight: 950;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .stat strong {
+      display: block;
+      margin-top: 2px;
+      font-size: 1rem;
+    }
+
+    .section {
+      margin-top: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--paper-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+
+    .food-note {
+      display: grid;
+      gap: 14px;
+    }
+
+    .story-card, .quote-card, .note-card, .ingredient-card, .step {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.62);
+      box-shadow: 0 6px 18px rgba(74, 47, 25, .06);
+    }
+
+    .story-card {
+      padding: 18px;
+    }
+
+    .story-card p, .quote-card p, .note-card p, .step p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .mini-visuals {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .mini {
+      min-height: 84px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff8ed;
+      overflow: hidden;
+    }
+
+    .mini svg {
+      width: 82%;
+      max-width: 96px;
+      height: auto;
+      filter: drop-shadow(0 8px 12px rgba(74, 47, 25, .12));
+    }
+
+    .quote-card {
+      padding: 20px;
+      background:
+        radial-gradient(circle at 94% 8%, rgba(223,77,63,.18), transparent 30%),
+        var(--ink);
+      color: #fff7e8;
+    }
+
+    .quote-card p {
+      margin: 0;
+      color: #fff7e8;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      line-height: 1.18;
+      letter-spacing: -.03em;
+    }
+
+    .quote-card small {
+      display: block;
+      margin-top: 12px;
+      color: rgba(255,247,232,.75);
+      font-weight: 750;
+    }
+
+    .recipe-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .ingredient-card {
+      padding: 18px;
+    }
+
+    .ingredient-group + .ingredient-group {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    ul, ol {
+      list-style: none;
+      margin: 12px 0 0;
+      padding: 0;
+    }
+
+    .ingredient-list {
+      display: grid;
+      gap: 2px;
+    }
+
+    .ingredient-list li {
+      position: relative;
+    }
+
+    .ingredient-check {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      align-items: start;
+      min-height: 44px;
+      padding: 9px 0;
+      border-bottom: 1px dashed rgba(44,35,29,.12);
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .ingredient-list li:last-child .ingredient-check { border-bottom: 0; }
+
+    .ingredient-check input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      margin-top: 2px;
+      background: var(--leaf);
+      box-shadow: inset 0 0 0 5px rgba(255,255,255,.42);
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+
+    .ingredient-check input:checked + .dot {
+      transform: scale(.82);
+      box-shadow: inset 0 0 0 3px rgba(255,255,255,.75), 0 0 0 3px rgba(44,35,29,.08);
+      opacity: .62;
+    }
+
+    .ingredient-check input:checked ~ span:last-child {
+      text-decoration: line-through;
+      color: rgba(116,99,88,.62);
+    }
+
+    .dot.tomato { background: var(--tomato); }
+    .dot.oil { background: #d9b36d; }
+    .dot.garlic { background: var(--garlic); }
+    .dot.pepper { background: #3a332e; }
+    .dot.leaf { background: var(--leaf); }
+    .dot.pickle { background: var(--pickle); }
+    .dot.corn { background: var(--corn); }
+    .dot.chicken { background: var(--chicken); }
+    .dot.yogurt { background: #fffdf7; border: 1px solid rgba(44,35,29,.16); }
+    .dot.mustard { background: var(--mustard); }
+    .dot.citrus { background: #d6d14b; }
+    .dot.paprika { background: #c45b2f; }
+
+    .instructions h2 { margin-bottom: 14px; }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 12px;
+      margin: 0;
+    }
+
+    .step {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 12px;
+      padding: 15px;
+      overflow: hidden;
+    }
+
+    .step::before {
+      content: counter(step);
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #fff7e8;
+      font-weight: 950;
+      box-shadow: 0 8px 18px rgba(44,35,29,.17);
+    }
+
+    .step h3 { margin-top: 2px; }
+
+    .romance {
+      margin-top: 12px;
+      border: 1px solid rgba(223,77,63,.18);
+      border-radius: 15px;
+      background: rgba(223,77,63,.09);
+      color: #60342d;
+      padding: 11px 12px;
+      font-size: .95rem;
+      font-weight: 750;
+    }
+
+    .notes-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .note-card { padding: 17px; }
+
+    .note-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .recipe-text {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: pre-wrap;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: calc(82px + env(safe-area-inset-bottom));
+      transform: translateX(-50%) translateY(12px);
+      z-index: 40;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff7e8;
+      padding: 11px 16px;
+      font-weight: 850;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease;
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .mobile-actionbar {
+      position: fixed;
+      left: 10px;
+      right: 10px;
+      bottom: calc(10px + env(safe-area-inset-bottom));
+      z-index: 30;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      padding: 8px;
+      border: 1px solid rgba(44,35,29,.12);
+      border-radius: 999px;
+      background: rgba(255, 253, 247, .88);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 14px 38px rgba(74, 47, 25, .20);
+    }
+
+    .mobile-actionbar button,
+    .mobile-actionbar a {
+      display: grid;
+      place-items: center;
+      min-height: 48px;
+      padding: 9px 10px;
+      box-shadow: none;
+      background: transparent;
+      font-size: .88rem;
+    }
+
+    .mobile-actionbar .primary-action {
+      background: var(--ink);
+      color: #fff7e8;
+      border-color: var(--ink);
+    }
+
+    footer {
+      padding: 24px 12px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: .92rem;
+    }
+
+    @media (max-width: 360px) {
+      .page { width: min(100% - 12px, var(--max)); }
+      .hero-copy, .section { padding-left: 16px; padding-right: 16px; }
+      h1 { font-size: clamp(2.25rem, 12vw, 3rem); }
+      .step { grid-template-columns: 1fr; }
+      .step::before { margin-bottom: -2px; }
+      .mobile-actionbar { left: 6px; right: 6px; gap: 5px; }
+      .mobile-actionbar button, .mobile-actionbar a { font-size: .8rem; }
+    }
+
+    @media (min-width: 560px) {
+      .page { width: min(100% - 28px, var(--max)); padding-top: 18px; }
+      .hero-copy { padding: 0 28px 28px; }
+      .section { padding: 26px; margin-top: 22px; }
+      .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .notes-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .food-note { grid-template-columns: 1fr .85fr; }
+      .quote-card { min-height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+    }
+
+    @media (min-width: 860px) {
+      .page { padding-bottom: 56px; }
+      .desktop-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+      .mobile-actionbar { display: none; }
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.02fr) minmax(360px, .98fr);
+        gap: 24px;
+        align-items: center;
+        padding: 34px;
+      }
+      .hero-art-wrap {
+        order: 2;
+        min-height: 430px;
+        padding: 0;
+      }
+      .salad-hero { width: min(100%, 520px); }
+      .chip-row {
+        position: absolute;
+        inset: auto 26px 26px auto;
+        width: min(430px, 42vw);
+        justify-content: center;
+        padding: 0;
+        overflow: visible;
+      }
+      .hero-copy {
+        padding: 0;
+        order: 1;
+      }
+      h1 { font-size: clamp(4rem, 6vw, 5.65rem); }
+      .lead { max-width: 58ch; font-size: 1.17rem; }
+      .recipe-grid {
+        grid-template-columns: minmax(280px, 360px) 1fr;
+        align-items: start;
+        gap: 24px;
+      }
+      .ingredient-card {
+        position: sticky;
+        top: 18px;
+      }
+      .section { padding: 36px; }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      button, a.button { transition: transform .16s ease, box-shadow .16s ease, background .16s ease; }
+      button:hover, a.button:hover {
+        transform: translateY(-2px);
+        background: var(--paper);
+        box-shadow: 0 12px 26px rgba(74, 47, 25, .13);
+      }
+      .mobile-actionbar button:hover, .mobile-actionbar a:hover { box-shadow: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .001ms !important;
+      }
+    }
+
+    @media print {
+      @page { margin: 16mm; }
+      body {
+        background: #fff;
+        color: #111;
+      }
+      body::before, .topbar, .hero-art-wrap, .chip-row, .mobile-actionbar, .toast, .mini-visuals, footer { display: none !important; }
+      .page { width: 100%; padding: 0; }
+      .hero, .section, .story-card, .quote-card, .note-card, .ingredient-card, .step {
+        box-shadow: none;
+        background: #fff;
+        border-color: #ddd;
+        color: #111;
+      }
+      .hero, .section { padding: 0; border: 0; margin: 0 0 18px; }
+      .hero-copy { padding: 0; }
+      .recipe-grid, .food-note, .notes-grid { display: block; }
+      .ingredient-card { position: static; margin-bottom: 18px; }
+      h1 { max-width: none; font-size: 34px; }
+      h2 { font-size: 25px; }
+      .stat, .ingredient-check, .step, .note-card { break-inside: avoid; }
+      .step { grid-template-columns: 40px 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Recipe",
+    "name": "Roasted Cherry Tomato Chicken Salad with Creamy Dijon Yogurt Dressing",
+    "description": "A fresh, crunchy chicken salad with juicy roasted cherry tomatoes, sweet corn, gherkins, and a creamy Dijon yogurt dressing.",
+    "recipeCategory": "Salad",
+    "recipeCuisine": "Home cooking",
+    "prepTime": "PT15M",
+    "cookTime": "PT12M",
+    "totalTime": "PT27M",
+    "recipeYield": "2 to 4 servings",
+    "recipeIngredient": [
+      "Cherry tomatoes",
+      "Avocado oil",
+      "Garlic salt",
+      "Black pepper",
+      "A few garlic cloves, peeled",
+      "1 bag salad leaves, torn into smaller pieces",
+      "3 to 4 gherkins, thinly sliced",
+      "1 can corn, drained",
+      "1 to 2 cooked chicken breasts, sliced or shredded",
+      "135 g Greek yogurt",
+      "1/2 tablespoon Dijon mustard, or more to taste",
+      "A squeeze of lemon, lime, or calamansi juice",
+      "A pinch of paprika",
+      "Optional fresh garlic or roasted garlic"
+    ],
+    "recipeInstructions": [
+      "Preheat the oven to 180°C. Coat cherry tomatoes and garlic cloves with avocado oil, garlic salt, and black pepper.",
+      "Roast for about 12 minutes, until softened and juicy. Let cool slightly.",
+      "Mix Greek yogurt, Dijon mustard, black pepper, citrus juice, and paprika to make the dressing.",
+      "Mash in roasted garlic or add fresh garlic to taste.",
+      "Combine salad leaves, corn, gherkins, and chicken in a large bowl.",
+      "Add roasted tomatoes, dressing, and some of the tomato oil and juices. Toss everything together.",
+      "Let sit for a few minutes before serving."
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#recipe">Skip to recipe</a>
+
+  <div class="page">
+    <header class="topbar" aria-label="Recipe page controls">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Kitchen Note</span></div>
+      <nav class="desktop-actions" aria-label="Recipe actions">
+        <a class="button" href="#recipe">Jump to recipe</a>
+        <button type="button" id="copyButtonTop">Copy recipe</button>
+        <button type="button" onclick="window.print()">Print</button>
+        <button type="button" id="shareButtonTop">Share</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="recipe-title">
+        <div class="hero-art-wrap" aria-label="Illustrated bowl of roasted cherry tomato chicken salad">
+          <svg class="salad-hero" viewBox="0 0 640 540" role="img" aria-labelledby="saladTitle saladDesc" xmlns="http://www.w3.org/2000/svg">
+            <title id="saladTitle">Illustrated roasted cherry tomato chicken salad</title>
+            <desc id="saladDesc">A bowl with salad leaves, roasted cherry tomatoes, corn, chicken, gherkins, roasted garlic, and creamy yogurt dressing.</desc>
+            <defs>
+              <radialGradient id="bowlGrad" cx="50%" cy="40%" r="66%">
+                <stop offset="0%" stop-color="#fffdf8"/>
+                <stop offset="64%" stop-color="#f0d6b8"/>
+                <stop offset="100%" stop-color="#c58f63"/>
+              </radialGradient>
+              <linearGradient id="leafGrad" x1="0" x2="1" y1="0" y2="1">
+                <stop stop-color="#78b66f"/>
+                <stop offset="1" stop-color="#2d6d3d"/>
+              </linearGradient>
+              <linearGradient id="chickenGrad" x1="0" x2="1">
+                <stop stop-color="#f2c49d"/>
+                <stop offset="1" stop-color="#d89b72"/>
+              </linearGradient>
+              <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="14" stdDeviation="15" flood-color="#482c18" flood-opacity="0.20"/>
+              </filter>
+            </defs>
+
+            <ellipse cx="320" cy="454" rx="232" ry="45" fill="#5b3d27" opacity=".14"/>
+            <path d="M92 256c18 150 94 224 228 224s210-74 228-224H92Z" fill="url(#bowlGrad)" stroke="#7d5538" stroke-opacity=".25" stroke-width="4" filter="url(#softShadow)"/>
+            <ellipse cx="320" cy="256" rx="242" ry="90" fill="#fffaf1" stroke="#7d5538" stroke-opacity=".28" stroke-width="5"/>
+            <ellipse cx="320" cy="250" rx="204" ry="60" fill="#f6e0c7" opacity=".62"/>
+
+            <g opacity=".98">
+              <path d="M203 174c-58 17-88 60-91 101 63 1 109-18 136-58 17-25-9-54-45-43Z" fill="url(#leafGrad)"/>
+              <path d="M430 168c58 17 91 56 98 97-65 5-113-12-144-49-19-23 10-58 46-48Z" fill="url(#leafGrad)"/>
+              <path d="M286 142c-56 24-75 69-67 108 61-10 101-37 119-79 11-27-18-44-52-29Z" fill="url(#leafGrad)"/>
+              <path d="M354 151c56 21 80 64 75 106-63-7-106-31-128-71-14-27 18-48 53-35Z" fill="url(#leafGrad)"/>
+              <path d="M170 260c50-31 101-30 137-7-44 43-91 57-139 42-30-9-28-17 2-35Z" fill="#68a35f"/>
+              <path d="M468 250c-48-30-96-27-134-2 43 40 89 53 135 38 31-10 29-18-1-36Z" fill="#5f9a58"/>
+            </g>
+
+            <g>
+              <path d="M238 248c42-36 91-47 145-33" fill="none" stroke="#fff9ef" stroke-width="22" stroke-linecap="round" opacity=".88"/>
+              <path d="M235 247c43-36 91-47 146-33" fill="none" stroke="#d7a21e" stroke-width="4" stroke-linecap="round" opacity=".50"/>
+              <path d="M178 301c44-22 91-22 142 2" fill="none" stroke="#fff9ef" stroke-width="18" stroke-linecap="round" opacity=".84"/>
+              <path d="M360 287c45-24 83-28 119-10" fill="none" stroke="#fff9ef" stroke-width="18" stroke-linecap="round" opacity=".84"/>
+            </g>
+
+            <g fill="url(#chickenGrad)" stroke="#a46547" stroke-opacity=".22" stroke-width="3">
+              <path d="M213 308c58-19 108-14 150 13-42 31-88 36-138 15-16-7-23-20-12-28Z"/>
+              <path d="M334 220c42-24 83-26 123-6-31 34-67 46-110 36-17-4-24-20-13-30Z"/>
+              <path d="M260 360c38-24 76-29 116-15-26 34-59 49-99 44-19-2-29-18-17-29Z"/>
+            </g>
+
+            <g>
+              <circle cx="188" cy="234" r="31" fill="#df4d3f" stroke="#9f2e2d" stroke-width="5"/>
+              <circle cx="452" cy="236" r="29" fill="#e65a4a" stroke="#9f2e2d" stroke-width="5"/>
+              <circle cx="306" cy="192" r="28" fill="#df4d3f" stroke="#9f2e2d" stroke-width="5"/>
+              <circle cx="367" cy="346" r="33" fill="#e65a4a" stroke="#9f2e2d" stroke-width="5"/>
+              <circle cx="238" cy="385" r="26" fill="#df4d3f" stroke="#9f2e2d" stroke-width="5"/>
+              <circle cx="474" cy="328" r="25" fill="#df4d3f" stroke="#9f2e2d" stroke-width="5"/>
+              <circle cx="178" cy="232" r="7" fill="#fff8"/>
+              <circle cx="443" cy="230" r="7" fill="#fff8"/>
+              <circle cx="298" cy="186" r="7" fill="#fff8"/>
+              <circle cx="358" cy="339" r="8" fill="#fff8"/>
+              <circle cx="230" cy="378" r="6" fill="#fff8"/>
+              <circle cx="468" cy="321" r="6" fill="#fff8"/>
+            </g>
+
+            <g fill="#f5bf3d" stroke="#b57a13" stroke-opacity=".24" stroke-width="2">
+              <circle cx="270" cy="260" r="8"/><circle cx="290" cy="277" r="7"/><circle cx="325" cy="280" r="8"/>
+              <circle cx="399" cy="256" r="8"/><circle cx="414" cy="300" r="7"/><circle cx="194" cy="336" r="8"/>
+              <circle cx="426" cy="362" r="8"/><circle cx="314" cy="373" r="7"/><circle cx="215" cy="276" r="7"/>
+              <circle cx="348" cy="236" r="7"/><circle cx="240" cy="213" r="7"/><circle cx="483" cy="278" r="7"/>
+            </g>
+
+            <g fill="#7b9c42" stroke="#496122" stroke-opacity=".32" stroke-width="3">
+              <ellipse cx="154" cy="301" rx="19" ry="10" transform="rotate(-18 154 301)"/>
+              <ellipse cx="404" cy="209" rx="20" ry="10" transform="rotate(22 404 209)"/>
+              <ellipse cx="277" cy="332" rx="22" ry="11" transform="rotate(-8 277 332)"/>
+              <ellipse cx="497" cy="284" rx="18" ry="9" transform="rotate(18 497 284)"/>
+              <ellipse cx="350" cy="397" rx="20" ry="10" transform="rotate(24 350 397)"/>
+            </g>
+
+            <g fill="#f5dcc1" stroke="#b9865e" stroke-opacity=".28" stroke-width="3">
+              <path d="M223 194c-8-18 13-34 30-22 15 11 9 37-11 39-8 1-15-5-19-17Z"/>
+              <path d="M432 383c-9-17 9-35 27-24 16 10 12 35-7 39-8 1-16-5-20-15Z"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="chip-row" aria-label="Recipe highlights">
+          <span class="chip">creamy Dijon</span>
+          <span class="chip">roasted tomatoes</span>
+          <span class="chip">pickle crunch</span>
+        </div>
+
+        <div class="hero-copy">
+          <div class="eyebrow">Roasty • crunchy • creamy</div>
+          <h1 id="recipe-title">Roasted Cherry Tomato Chicken Salad</h1>
+          <p class="lead">A fresh, crunchy chicken salad with juicy roasted cherry tomatoes, sweet corn, gherkins, and a creamy Dijon yogurt dressing. The roasted tomato oil gets folded in at the end, turning the whole bowl glossy, savory, and extremely shareable.</p>
+          <div class="stats" aria-label="Recipe details">
+            <div class="stat"><span>Prep</span><strong>15 min</strong></div>
+            <div class="stat"><span>Cook</span><strong>12 min</strong></div>
+            <div class="stat"><span>Total</span><strong>27 min</strong></div>
+            <div class="stat"><span>Serves</span><strong>2 to 4</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section food-note" aria-label="Recipe introduction">
+        <article class="story-card">
+          <h2>Why it works</h2>
+          <p>The tomatoes roast just long enough to soften, sweeten, and release a garlicky tray oil. That oil slips into the yogurt dressing and gives the salad a warm, savory backbone.</p>
+          <div class="mini-visuals" aria-label="Ingredient illustrations">
+            <div class="mini" aria-hidden="true">
+              <svg viewBox="0 0 140 110" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="48" cy="58" r="25" fill="#df4d3f" stroke="#9f2e2d" stroke-width="5"/>
+                <circle cx="89" cy="49" r="28" fill="#e65a4a" stroke="#9f2e2d" stroke-width="5"/>
+                <path d="M84 21c10-12 22-11 30-5" fill="none" stroke="#4f8c52" stroke-width="6" stroke-linecap="round"/>
+                <circle cx="39" cy="49" r="6" fill="#fff8"/><circle cx="78" cy="40" r="7" fill="#fff8"/>
+              </svg>
+            </div>
+            <div class="mini" aria-hidden="true">
+              <svg viewBox="0 0 140 110" xmlns="http://www.w3.org/2000/svg">
+                <path d="M34 80c9-40 35-62 69-64 12 38-5 71-52 78-9 1-19-5-17-14Z" fill="#4f8c52"/>
+                <path d="M43 82c22-18 42-38 58-60" fill="none" stroke="#dff0d5" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="89" cy="74" r="8" fill="#f5bf3d"/><circle cx="103" cy="60" r="7" fill="#f5bf3d"/>
+              </svg>
+            </div>
+            <div class="mini" aria-hidden="true">
+              <svg viewBox="0 0 140 110" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="70" cy="68" rx="49" ry="22" fill="#fff9ef" stroke="#c58f20" stroke-width="4"/>
+                <path d="M41 66c18-20 40-29 66-22" fill="none" stroke="#d7a21e" stroke-width="5" stroke-linecap="round" opacity=".65"/>
+                <path d="M52 54c-6-14 11-25 23-15 10 9 3 27-12 25-5-1-9-4-11-10Z" fill="#f5dcc1"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <aside class="quote-card">
+          <p>The secret ingredient is the tomato tray oil. Tiny roasted-garlic sunbeam, bottled by accident.</p>
+          <small>Best eaten after the leaves have had a few minutes to soak up the dressing.</small>
+        </aside>
+      </section>
+
+      <section class="section" id="recipe">
+        <div class="recipe-grid">
+          <aside class="ingredient-card" aria-label="Ingredients">
+            <h2>Ingredients</h2>
+            <p style="margin: 0 0 12px; color: var(--muted);">Tap ingredients to check them off as you cook.</p>
+
+            <div class="ingredient-group">
+              <h3>For the roasted tomatoes</h3>
+              <ul class="ingredient-list">
+                <li><label class="ingredient-check"><input type="checkbox"><span class="dot tomato"></span><span>Cherry tomatoes, as many as you like, then add a few more</span></label></li>
+                <li><label class="ingredient-check"><input type="checkbox"><span class="dot oil"></span><span>Avocado oil</span></label></li>
+                <li><label class="ingredient-check"><input type="checkbox"><span class="dot garlic"></span><span>Garlic salt</span></label></li>
+                <li><label class="ingredient-check"><input type="checkbox"><span class="dot pepper"></span><span>Black pepper</span></label></li>
+                <li><label class="ingredient-check"><input type="checkbox"><span class="dot garlic"></span><span>A few garlic cloves, peeled</span></label></li>
+              </ul>
+            </div>
+
+            <div class="ingredient-group">
+              <h3>For the salad</h3>
+              <ul class="ingredient-list">
+                <li><label class="ingredient-check"><input type="checkbox"><span class="dot leaf"></span><span>1 bag salad leaves, torn into smaller pieces</span></label></li>
+                <li><label class="ingredient-check"><input type="checkbox"><span class="dot pickle"></span><span>3 to 4 gherkins, thinly sliced, still thick enough to keep some crunch</span></label></li>
+                <li><label class="ingredient-check"><input type="checkbox"><span class="dot corn"></span><span>1 can corn, drained</span></label></li>
+                <li><label class="ingredient-check"><input type="checkbox"><span class="dot chicken"></span><span>1 to 2 cooked chicken breasts, sliced or shredded</span></label></li>
+              </ul>
+            </div>
+
+            <div class="ingredient-group">
+              <h3>For the dressing</h3>
+              <ul class="ingredient-list">
+                <li><label class="ingredient-check"><input type="checkbox"><span class="dot yogurt"></span><span>135 g Greek yogurt</span></label></li>
+                <li><label class="ingredient-check"><input type="checkbox"><span class="dot mustard"></span><span>½ tablespoon Dijon mustard, or more to taste</span></label></li>
+                <li><label class="ingredient-check"><input type="checkbox"><span class="dot pepper"></span><span>Black pepper</span></label></li>
+                <li><label class="ingredient-check"><input type="checkbox"><span class="dot citrus"></span><span>A squeeze of lemon, lime, or calamansi juice</span></label></li>
+                <li><label class="ingredient-check"><input type="checkbox"><span class="dot paprika"></span><span>A pinch of paprika</span></label></li>
+                <li><label class="ingredient-check"><input type="checkbox"><span class="dot garlic"></span><span>Optional: fresh garlic or the roasted garlic from the tomatoes</span></label></li>
+              </ul>
+            </div>
+          </aside>
+
+          <article class="instructions" aria-label="Instructions">
+            <h2>Instructions</h2>
+            <ol class="steps">
+              <li class="step">
+                <div>
+                  <h3>Roast the tomatoes.</h3>
+                  <p>Preheat the oven to <strong>180°C</strong>. Add the cherry tomatoes to a baking dish with avocado oil, garlic salt, black pepper, and a few garlic cloves. Mix well so the tomatoes are fully coated.</p>
+                </div>
+              </li>
+              <li class="step">
+                <div>
+                  <h3>Bake.</h3>
+                  <p>Roast the tomatoes for about <strong>12 minutes</strong>, until they soften and release some juices. Set aside to cool slightly.</p>
+                </div>
+              </li>
+              <li class="step">
+                <div>
+                  <h3>Make the dressing.</h3>
+                  <p>In a bowl, mix the Greek yogurt with Dijon mustard, black pepper, citrus juice, and paprika. Taste and adjust the mustard or citrus juice if needed.</p>
+                </div>
+              </li>
+              <li class="step">
+                <div>
+                  <h3>Add garlic to the dressing.</h3>
+                  <p>Mash in one of the roasted garlic cloves from the tomato tray for a softer flavor, or add a little fresh garlic for a sharper, spicier taste.</p>
+                  <div class="romance">Recommended: add both, but go easy on the fresh garlic if romance is expected to commence later.</div>
+                </div>
+              </li>
+              <li class="step">
+                <div>
+                  <h3>Assemble the salad.</h3>
+                  <p>Add the salad leaves, corn, gherkins, and chicken to a large bowl. Try to slice the chicken so it is roughly the same thickness as the gherkins.</p>
+                </div>
+              </li>
+              <li class="step">
+                <div>
+                  <h3>Finish.</h3>
+                  <p>Add the roasted tomatoes to the salad. Pour in the dressing, along with some of the oil and juices from the tomato tray. Toss everything together.</p>
+                </div>
+              </li>
+              <li class="step">
+                <div>
+                  <h3>Let it sit.</h3>
+                  <p>Leave the salad for a few minutes before serving so the dressing can soak into the leaves a little.</p>
+                </div>
+              </li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Recipe notes">
+        <h2>Notes</h2>
+        <div class="notes-grid">
+          <div class="note-card">
+            <strong>For sharpness</strong>
+            <p>Add a little more Dijon mustard. Start small and sneak up on it.</p>
+          </div>
+          <div class="note-card">
+            <strong>For brightness</strong>
+            <p>Add more citrus juice. Lemon, lime, or calamansi all work beautifully.</p>
+          </div>
+          <div class="note-card">
+            <strong>For smoke</strong>
+            <p>Add a pinch more paprika. The salad gets deeper without becoming heavy.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Made for sharing, printing, and sending to anyone who needs a salad with main-character energy.
+    </footer>
+  </div>
+
+  <nav class="mobile-actionbar" aria-label="Mobile recipe actions">
+    <a class="button primary-action" href="#recipe">Recipe</a>
+    <button type="button" id="copyButtonMobile">Copy</button>
+    <button type="button" id="shareButtonMobile">Share</button>
+  </nav>
+
+  <pre class="recipe-text" id="recipeText">Roasted Cherry Tomato Chicken Salad with Creamy Dijon Yogurt Dressing
+
+A fresh, crunchy chicken salad with juicy roasted cherry tomatoes, sweet corn, gherkins, and a creamy Dijon yogurt dressing. The roasted tomato oil gets mixed into the salad at the end, which makes everything extra delicious.
+
+Ingredients
+
+For the roasted tomatoes
+- Cherry tomatoes, as many as you like, then add a few more
+- Avocado oil
+- Garlic salt
+- Black pepper
+- A few garlic cloves, peeled
+
+For the salad
+- 1 bag salad leaves, torn into smaller pieces
+- 3 to 4 gherkins, thinly sliced, still thick enough to keep some crunch
+- 1 can corn, drained
+- 1 to 2 cooked chicken breasts, sliced or shredded
+
+For the dressing
+- 135 g Greek yogurt
+- 1/2 tablespoon Dijon mustard, or more to taste
+- Black pepper
+- A squeeze of lemon, lime, or calamansi juice
+- A pinch of paprika
+- Optional: fresh garlic or the roasted garlic from the tomatoes
+
+Instructions
+1. Preheat the oven to 180°C. Add the cherry tomatoes to a baking dish with avocado oil, garlic salt, black pepper, and a few garlic cloves. Mix well so the tomatoes are fully coated.
+2. Roast the tomatoes for about 12 minutes, until they soften and release some juices. Set aside to cool slightly.
+3. Mix the Greek yogurt with Dijon mustard, black pepper, citrus juice, and paprika. Taste and adjust the mustard or citrus juice if needed.
+4. Mash in roasted garlic for a softer flavor, or add fresh garlic for a sharper, spicier taste. Recommended: add both, but go easy on the fresh garlic if romance is expected to commence later.
+5. Add the salad leaves, corn, gherkins, and chicken to a large bowl. Try to slice the chicken so it is roughly the same thickness as the gherkins.
+6. Add the roasted tomatoes to the salad. Pour in the dressing, along with some of the oil and juices from the tomato tray. Toss everything together.
+7. Leave the salad for a few minutes before serving so the dressing can soak into the leaves a little.
+
+Notes
+Taste as you go. Add more Dijon for sharpness, more citrus for brightness, or more paprika for a slightly smoky flavor.</pre>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Recipe copied</div>
+
+  <script>
+    const recipeText = document.getElementById('recipeText').innerText;
+    const toast = document.getElementById('toast');
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      window.setTimeout(() => toast.classList.remove('show'), 1900);
+    }
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+    }
+
+    async function copyRecipe() {
+      try {
+        await copyText(recipeText);
+        showToast('Recipe copied');
+      } catch (error) {
+        showToast('Copy unavailable');
+      }
+    }
+
+    async function shareRecipe() {
+      const shareData = {
+        title: document.title,
+        text: 'Roasted Cherry Tomato Chicken Salad with Creamy Dijon Yogurt Dressing',
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+          return;
+        } catch (error) {
+          if (error && error.name === 'AbortError') return;
+        }
+      }
+
+      try {
+        await copyText(window.location.href);
+        showToast('Link copied');
+      } catch (error) {
+        showToast('Share unavailable');
+      }
+    }
+
+    ['copyButtonTop', 'copyButtonMobile'].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('click', copyRecipe);
+    });
+
+    ['shareButtonTop', 'shareButtonMobile'].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('click', shareRecipe);
+    });
+  </script>
+</body>
+</html>
